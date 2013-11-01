@@ -1,14 +1,11 @@
-call pathogen#infect()
-let mapleader = ","
-" Open files with <leader>f
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-" Open files, limited to the directory of the current file, with <leader>gf
-" This requires the %% mapping found below.
-map <leader>gf :CommandTFlush<cr>\|:CommandT %%<cr>
+execute pathogen#infect()
 syntax on
 filetype plugin indent on
+set t_Co=256
+let mapleader = ","
+let g:ruby_path = system('rvm current')
 set background=dark
-colorscheme ir_black 
+:colo desert256
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
@@ -17,10 +14,20 @@ colorscheme ir_black
 :set showmatch
 :set smartindent
 :set list listchars=tab:>-,trail:.,extends:>
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
+:set hlsearch
+:set number
+:set pastetoggle=<F2>
+:set tw=80
+:set cc=80
+set modeline
+set ls=2
+map <C-n> :NERDTreeToggle<CR>
+map <leader>c <c-_><c-_>
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
